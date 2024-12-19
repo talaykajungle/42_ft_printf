@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/19 17:14:03 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/11/11 17:38:46 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/11/18 16:02:00 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <unistd.h>
 
-int ft_format(va_list *args, char c)
+int	ft_isalpha(int c)
 {
-	
-}
-
-int	ft_printf(const char *format, ...)
-{
-	va_list args;
-	va_start(args, format);
-
-	
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

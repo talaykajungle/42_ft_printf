@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/19 17:14:03 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/07 18:54:47 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/12/07 18:58:28 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "libft.h"
 
-int ft_format(va_list *args, char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	
+	write(fd, &c, 1);
 }
 
-int	ft_printf(const char *format, ...)
-{
-	va_list args;
-	va_start(args, format);
-
-	
-}
+// int main()
+// {
+// 	int fd = open("ft_te", O_RDWR);
+// 	ft_putchar_fd('G',fd);
+// }

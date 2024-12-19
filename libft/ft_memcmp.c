@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/19 17:14:03 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/11/12 19:01:38 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/11/18 16:20:52 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "libft.h"
 
-int ft_format(va_list *args, char c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	
-}
+	const unsigned char	*s_cmp1;
+	const unsigned char	*s_cmp2;
 
-int	ft_printf(const char *format, ...)
-{
-	va_list args;
-	va_start(args, format);
-
-	
+	s_cmp1 = s1;
+	s_cmp2 = s2;
+	while (n)
+	{
+		if (*s_cmp1 != *s_cmp2)
+		{
+			return (*s_cmp1 - *s_cmp2);
+		}
+		s_cmp1++;
+		s_cmp2++;
+		n--;
+	}
+	return (0);
 }

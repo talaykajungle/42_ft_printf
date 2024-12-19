@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/19 17:14:03 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/11/12 18:29:31 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/11/26 14:38:01 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "libft.h"
 
-int ft_format(va_list *args, char c)
+size_t	ft_strlen(const char *s)
 {
-	
-}
+	size_t	i;
 
-int	ft_printf(const char *format, ...)
-{
-	va_list args;
-	va_start(args, format);
-
-	
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

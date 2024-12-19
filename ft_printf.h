@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/19 17:14:03 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/19 16:35:35 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/12/19 16:49:36 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#ifndef FT_PRINTF.H
+# define FT_PRINTF_H
 
-int ft_format(va_list *args, char c)
-{
-	
-}
+# include <stdio.h>
+# include <unistd.h>
+# include <stdbool.h>
+# include <stdarg.h>
 
-int	ft_printf(const char *format, ...)
-{
-	va_list args;
-	va_start(args, format);
+int ft_printf(const char *, ...);
 
-	
-}
+#endif
