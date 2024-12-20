@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:35:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/19 16:49:36 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/20 23:24:10 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <stdbool.h>
 # include <stdarg.h>
 
-int ft_printf(const char *, ...);
+int ft_printf(char *format, ...);
 
 #endif
