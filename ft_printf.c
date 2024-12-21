@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/21 19:40:55 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/21 19:43:25 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_handle_format(va_list *args, char c)
 		return (ft_unsigned(va_arg((*args), int)));
 	else if (c == 'p')
 		return (ft_pointer(va_arg(*args, void *)));
-	else if	(c == '%')
+	else if (c == '%')
 		return (ft_putchar(va_arg(*args, char), '%'));
 }
 

@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:54:55 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/21 19:04:47 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/21 19:44:37 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_pointer(void *ptr)
 {
-	unsigned long ret;
-	int res;
+	unsigned long	ret;
+	int				res;
 
 	ret = (unsigned long)ptr;
 	res = 0;

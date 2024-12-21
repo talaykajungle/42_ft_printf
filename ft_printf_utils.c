@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:43:14 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/21 18:42:47 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/21 19:43:59 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_puthex(unsigned int a, char format)
 
 int	ft_unsigned(unsigned int a)
 {
-	int ret;
+	int	ret;
 
 	ret = 0;
 	if (a >= 10)
