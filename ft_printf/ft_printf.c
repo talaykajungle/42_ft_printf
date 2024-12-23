@@ -6,51 +6,54 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:26:21 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/22 21:19:52 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/23 19:17:23 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_handle_format(va_list *args, char c)
+void	ft_handle_format(va_list *args, char c, int *len)
 {
 	if (c == 's')
-		return (ft_putstr(va_arg(*args, char *)));
+		ft_putstr(va_arg(*args, char *), len);
+	else if (c == 'c')
+		ft_putchar(va_arg(*args, int), len);
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(*args, int)));
+		ft_putnbr(va_arg(*args, int), len);
 	else if (c == 'x')
-		return (ft_puthex(va_arg(*args, unsigned int), 0));
+		ft_puthex(va_arg(*args, unsigned int), 'x', len);
 	else if (c == 'X')
-		return (ft_puthex(va_arg(*args, unsigned int), 1));
+		ft_puthex(va_arg(*args, unsigned int), 'X', len);
 	else if (c == 'u')
-		return (ft_unsigned(va_arg(*args, unsigned int)));
+		ft_unsigned(va_arg(*args, unsigned int), len);
 	else if (c == 'p')
-		return (ft_pointer(va_arg(*args, void *)));
+		ft_pointer(va_arg(*args, size_t), len);
 	else if (c == '%')
-		return (ft_putchar('%'));
-	return (0);
+		ft_putchar('%', len);
+	return ;
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int		count;
+	int		len;
 
-	count = 0;
+	len = 0;
 	va_start(args, format);
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			count += ft_handle_format(&args, *format);
+			ft_handle_format(&args, *format, &len);
+			format++;
 		}
 		else
 		{
-			count += ft_putchar(*format);
+			ft_putchar(*format, &len);
+			format++;
 		}
-		format++;
 	}
 	va_end(args);
-	return (count);
+	return (len);
 }

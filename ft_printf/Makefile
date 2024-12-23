@@ -1,5 +1,5 @@
 # Variables
-SRCS =  ft_printf.c main.c ft_printf_utils.c ft_pointer.c
+SRCS =  ft_printf.c main.c ft_printf_utils.c ft_pointer.c ft_puthex.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = libftprintf.a

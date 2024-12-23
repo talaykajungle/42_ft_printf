@@ -6,72 +6,59 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:43:14 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/22 21:31:56 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/23 18:47:59 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned int a, char format)
+void	ft_unsigned(unsigned int a, int *len)
 {
-	int	ret;
-
-	ret = 0;
-	if (a >= 16)
-		ret += ft_puthex(a / 16, format);
-	if (format == 'X')
-		write(1, &"0123456789ABCDEF"[a % 16], 1);
-	if (format == 'x')
-		write(1, &"0123456789abcdef"[a % 16], 1);
-	return (ret + 1);
-}
-
-int	ft_unsigned(unsigned int a)
-{
-	int	ret;
-
-	ret = 0;
 	if (a >= 10)
-		ret += ft_unsigned(a / 10);
-	write(1, &"0123456789"[a % 10], 1);
-	return (ret + 1);
+		ft_unsigned(a / 10, len);
+	ft_putchar(a % 10 + '0', len);
 }
 
-int	ft_putchar(char c)
+void	ft_putchar(char c, int *len)
 {
-	return (write(1, &c, 1)); // Returns the number of characters printed (1)
+	write(1, &c, 1);
+	(*len)++;
 }
 
-int	ft_putstr(char *s)
+void	ft_putstr(char *s, int *len)
 {
-	int	count;
+	int	index;
 
+	index = 0;
 	if (!s)
 	{
-		return (write(1, "(null)", 6)); // Handle null string
+		write(1, "(null)", 6);
+		*len += 6;
+		return ;
 	}
-	count = 0;
-	while (*s)
+	while (s[index] != '\0')
 	{
-		count += ft_putchar(*s++);
+		ft_putchar(s[index], len);
+		index++;
 	}
-	return (count); // Return the total count of characters printed
 }
 
-int	ft_putnbr(int n)
+void	ft_putnbr(int n, int *len)
 {
-	int	count;
-
-	count = 0;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		*len += 11;
+		return ;
+	}
 	if (n < 0)
 	{
-		count += ft_putchar('-');
+		ft_putchar('-', len);
 		n = -n;
 	}
 	if (n >= 10)
 	{
-		count += ft_putnbr(n / 10);
+		ft_putnbr(n / 10, len);
 	}
-	count += ft_putchar((n % 10) + '0');
-	return (count); // Return the total count of characters printed
+	ft_putchar((n % 10) + '0', len);
 }

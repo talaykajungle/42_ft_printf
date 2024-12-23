@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pointer.c                                       :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/21 18:54:55 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/23 17:05:40 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/23 18:47:27 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/12/23 22:21:47 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pointer(uintptr_t ptr, int *len)
+void	ft_puthex(unsigned int a, char format, int *len)
 {
-	char		str[sizeof(uintptr_t) * 2 + 1];
-	int			i;
-	const char	*hex_base;
-
-	hex_base = "0123456789abcdef";
-	i = 0;
-	if (ptr == 0)
+	if (a == 0)
 	{
-		ft_putstr("(nil)", len);
+		write(1, "0", 1);
+		(*len)++;
 		return ;
 	}
-	if (write(1, "0x", 2) != 2)
-		return ;
-	(*len) += 2;
-	while (ptr)
-	{
-		str[i++] = hex_base[ptr % 16];
-		ptr /= 16;
-	}
-	while (i--)
-		ft_putchar(str[i], len);
+	if (a >= 16)
+		ft_puthex(a / 16, format, len);
+	if (format == 'X')
+		write(1, &"0123456789ABCDEF"[a % 16], 1);
+	else if (format == 'x')
+		write(1, &"0123456789abcdef"[a % 16], 1);
+	(*len)++;
 }
