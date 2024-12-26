@@ -6,11 +6,12 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:53:38 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/22 21:28:25 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/26 20:02:11 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 // #include "libft.h"
 
 // int	main(void)
@@ -29,3 +30,9 @@
 // 	ft_printf("Percent sign: %%\n");
 // 	return (0);
 // }
+
+// To run the main you also need to call evry .c file that is connected
+// that includes also the libft library
+
+// The command to run it:
+// cc *.c libft/*.c && ./a.out
