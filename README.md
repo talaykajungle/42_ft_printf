@@ -1,4 +1,5 @@
 ft_printf
+
 ft_printf is a custom implementation of the printf function in C. This project is part of the curriculum at 42 Wolfsburg.
 Description
 This project involves recoding the printf() function from libc to create a library called libftprintf.a. The ft_printf function mimics the behavior of the original printf() but with a limited set of conversions and features.
