@@ -1,5 +1,5 @@
 # Variables
-SRCS =  ft_printf.c main.c ft_printf_utils.c ft_pointer.c ft_puthex.c
+SRCS =  ft_printf.c ft_printf_utils.c ft_pointer.c ft_puthex.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = libftprintf.a
@@ -26,7 +26,7 @@ $(NAME): makelibft $(OBJS)
 
 # Clean rule
 clean:
-	rm -f $(OBJS) main.o
+	rm -f $(OBJS)
 	cd $(LIBFTDIR) && make clean
 
 # fclean rule
