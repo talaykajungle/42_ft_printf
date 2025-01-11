@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 18:54:55 by tamutlu           #+#    #+#             */
-/*   Updated: 2025/01/11 13:05:20 by tamutlu          ###   ########.fr       */
+/*   Updated: 2025/01/11 21:00:33 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_pointer(uintptr_t ptr, int *len)
 	i = 0;
 	if (ptr == 0)
 	{
-		ft_putstr("(null)", len);
+		ft_putstr("(nil)", len);
 		return ;
 	}
 	if (write(1, "0x", 2) != 2)

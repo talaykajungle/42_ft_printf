@@ -6,7 +6,7 @@ NAME = libftprintf.a
 LIBFTNAME = libft.a
 LIBFTDIR = ./libft
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(LIBFTDIR)
 
 # Default target
